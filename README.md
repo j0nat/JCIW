@@ -1,16 +1,20 @@
 # JCIW
 
-![Preview1](./Media/DesktopClient.png)
+![Preview1](./Media/DesktopClient.png)  
 **Desktop client opening demo app**
 
-![Preview1](./Media/AndroidClient.png)
+
+![Preview2](./Media/AndroidClient.png)  
 **Android client opening demo app**
 
-![Preview1](./Media/Adminclient.png)
+
+![Preview3](./Media/Adminclient.png)  
 **Admin client**
 
-![Preview1](./Media/VS.png)
+
+![Preview4](./Media/VS.png)  
 **Visual Studio templates**
+
 
 
 ## Features
