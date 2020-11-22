@@ -12,7 +12,7 @@
 
 **To compile**: 
 
-1. Open Windows Live Messenger.sln in Visual Studio
+1. Open JCIW.sln in Visual Studio
 
 2. Build Solution
 
