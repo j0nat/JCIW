@@ -1,0 +1,78 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client_Admin.Views"
+             xmlns:Controls="clr-namespace:Client_Admin.Controls" x:Class="Client_Admin.Views.MainView"
+             mc:Ignorable="d" Background="#FF2C2C2C"
+             d:DesignHeight="529.207" d:DesignWidth="940.488" >
+    <Grid Margin="6px">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#FF003153">
+            <Label Content="Connected to: 1.1.1.1" Name="LabelConnectedText" FontSize="24px" Foreground="White" Margin="5px" FontFamily="Lucida Console"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" x:Name="NavigationGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1.5*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" x:Name="ServiceListGrid" Background="Transparent" Margin="0 ">
+                    <TreeView Grid.Row="2" FontSize="22px" BorderThickness="0" Padding="0 0 20 0" BorderBrush="#e2e2e2" Background="Transparent" FontWeight="Bold" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Left" SelectedItemChanged="TreeView_SelectedItemChanged"> 
+                        <TreeView.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#7F1D1D1D" />
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="#7F1D1D1D" />
+                            <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="#7F1D1D1D" />
+                            <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="#7F1D1D1D" />
+                        </TreeView.Resources>
+                        <TreeViewItem Name="ServiceTreeView" Header="Services" Margin="0 10 0 0" IsExpanded="True" HorizontalAlignment="Stretch" ItemContainerStyle="{StaticResource TreeViewItemStyle}"
+                                      FontWeight="Normal" Foreground="White" ItemsSource="{Binding Services}" MouseUp="ServiceTreeView_MouseUp" />
+                    </TreeView>
+                </Grid>
+
+                <Grid Grid.Row="1" Background="Transparent">
+                    <TreeView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="0 10 0 0" BorderThickness="0" Background="Transparent" HorizontalAlignment="Left">
+                        <TreeViewItem Padding="0 0 0 3" Header="Modules" IsExpanded="True" BorderThickness="0" FontSize="18px" FontWeight="Normal" Foreground="White">
+                            <TextBlock Style="{StaticResource TextBoxHoverOpacity}" FontSize="18px" Padding="0 0 0 3"><Hyperlink Style="{StaticResource ListLink}" Foreground="White" Command="{Binding InstallCommand}">Install</Hyperlink></TextBlock>
+                            <TextBlock Style="{StaticResource TextBoxHoverOpacity}" FontSize="18px" Padding="0 0 0 3"><Hyperlink Style="{StaticResource ListLink}" Foreground="White" Command="{Binding AppCommand}">Apps</Hyperlink></TextBlock>
+                            <TextBlock Style="{StaticResource TextBoxHoverOpacity}" FontSize="18px" Padding="0 0 0 3"><Hyperlink Style="{StaticResource ListLink}" Foreground="White" Command="{Binding ArchiveCommand}">Archive</Hyperlink></TextBlock>
+                            <TextBlock Style="{StaticResource TextBoxHoverOpacity}" FontSize="18px" Padding="0 0 0 3"><Hyperlink Style="{StaticResource ListLink}" Foreground="White" Command="{Binding LogsCommand}">Logs</Hyperlink></TextBlock>
+                        </TreeViewItem>
+                        <TreeViewItem  Header="User Administration" IsExpanded="True" Padding="0 10 0 3" BorderThickness="0" FontSize="18px" FontWeight="Normal" Foreground="White">
+                            <TextBlock Style="{StaticResource TextBoxHoverOpacity}" FontSize="18px" Padding="0 0 0 3"><Hyperlink Style="{StaticResource ListLink}" Foreground="White" Command="{Binding UsersCommand}">Users</Hyperlink></TextBlock>
+                            <TextBlock Style="{StaticResource TextBoxHoverOpacity}" FontSize="18px" Padding="0 0 0 3"><Hyperlink Style="{StaticResource ListLink}" Foreground="White" Command="{Binding GroupsCommand}">Groups</Hyperlink></TextBlock>
+                        </TreeViewItem>
+                    </TreeView>
+                </Grid>
+
+                <GridSplitter Grid.Row="0" Height="6" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Background="#7F1D1D1D"/>
+            </Grid>
+            <Grid Grid.Column="1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="6px"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" x:Name="UserOutputGrid" Margin="8px 0px 0px 0px">
+                    <RichTextBox Name="TxtServiceOutput" IsReadOnly="True" Foreground="White" Margin="5px" Padding="15px" VerticalScrollBarVisibility="Visible"  FontSize="18px" BorderThickness="0" Background="#7F1D1D1D" />
+                </Grid>
+                <Grid Background="Transparent" Grid.Row="1">
+                    
+                </Grid>
+                <Grid Grid.Row="2" x:Name="UserInputGrid" Margin="8px 0px 0px 0px">
+                    <TextBox Name="txtCommand" Height="33px" Margin="5px" BorderThickness="2" BorderBrush="#444" FontSize="18px" VerticalContentAlignment="Center" Foreground="White" PreviewKeyDown="txtCommand_PreviewKeyDown" Background="#7F1D1D1D" />
+                </Grid>
+            </Grid>
+            <GridSplitter Grid.Column="1" Width="6px" VerticalAlignment="Stretch" HorizontalAlignment="Left" Background="#7F1D1D1D" />
+        </Grid>
+    </Grid>
+</UserControl>

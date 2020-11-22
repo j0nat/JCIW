@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6B294190-5123-40EA-A8EB-FA2144BF67FC}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Client_Mobile.Android</RootNamespace>
+    <AssemblyName>Client-Mobile.Android</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>true</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidStoreUncompressedFileExtensions>.m4a</AndroidStoreUncompressedFileExtensions>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
+    <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;ANDROID</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
+    <AndroidSupportedAbis>armeabi-v7a;x86;x86_64;arm64-v8a</AndroidSupportedAbis>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
+    <MandroidI18n />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;ANDROID</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <AndroidSupportedAbis>armeabi-v7a;x86;x86_64;arm64-v8a</AndroidSupportedAbis>
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
+    <AndroidDexTool>d8</AndroidDexTool>
+    <MandroidI18n />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Mono.Android" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activity1.cs" />
+    <Compile Include="AndroidFunctions.cs" />
+    <Compile Include="Camera\AutoFitTextureView.cs" />
+    <Compile Include="Camera\Camera2BasicFragment.cs" />
+    <Compile Include="Camera\CameraActivity.cs" />
+    <Compile Include="Camera\CompareSizesByArea.cs" />
+    <Compile Include="Camera\ConfirmationDialog.cs" />
+    <Compile Include="Camera\ErrorDialog.cs" />
+    <Compile Include="Listeners\Camera2BasicSurfaceTextureListener.cs" />
+    <Compile Include="Listeners\CameraCaptureListener.cs" />
+    <Compile Include="Listeners\CameraCaptureSessionCallback.cs" />
+    <Compile Include="Listeners\CameraCaptureStillPictureSessionCallback.cs" />
+    <Compile Include="Listeners\CameraStateListener.cs" />
+    <Compile Include="Listeners\ImageAvailableListener.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Content.mgcb" />
+    <AndroidNativeLibrary Include="lib\arm64-v8a\libcimgui.so" />
+    <AndroidNativeLibrary Include="lib\armeabi-v7a\libcimgui.so" />
+    <AndroidNativeLibrary Include="lib\x86\libcimgui.so" />
+    <AndroidNativeLibrary Include="lib\x86_64\libcimgui.so" />
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" Visible="false" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.0.1641" />
+    <PackageReference Include="MonoGame.Framework.Android" Version="3.7.1.189" />
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="protobuf-net">
+      <Version>3.0.52</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v13">
+      <Version>28.0.0.3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\JCIW.App\JCIW.App.csproj">
+      <Project>{0b0d6f37-05c1-4f96-ae5b-d0b3d54b8ac5}</Project>
+      <Name>JCIW.App</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\JCIW.Module\JCIW.Module.csproj">
+      <Project>{c55b9211-b717-42ae-93fe-51bea7356718}</Project>
+      <Name>JCIW.Module</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Client-Networking.Android\Client-Networking.Android.csproj">
+      <Project>{6fc0c181-5de4-4b1f-96bf-acd033b647de}</Project>
+      <Name>Client-Networking.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GraphicsEngine\GraphicsEngine.csproj">
+      <Project>{d4f991fb-135f-4af7-99c1-7193c625b56a}</Project>
+      <Name>GraphicsEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\JCIW.Data\JCIW.Data.csproj">
+      <Project>{f54530b8-899e-4e93-ac27-1ff4f8c48ef8}</Project>
+      <Name>JCIW.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\JCIW\JCIW.csproj">
+      <Project>{cf3a468a-1439-4c49-bde9-2982307f2073}</Project>
+      <Name>JCIW</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Networking.Data\Networking.Data.csproj">
+      <Project>{046EE9FF-EFBA-41CE-9221-E57BC5383A1E}</Project>
+      <Name>Networking.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ImGui.NET\ImGui.NET.csproj">
+      <Project>{0cbf04dc-faa0-4181-965f-7aa85bc4c29c}</Project>
+      <Name>ImGui.NET</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Layout\camera_layout.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Layout\fragment_camera2_basic.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\button_bg_round.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\ic_launcher.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\gradient.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher_foreground.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher_foreground.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher_foreground.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher_foreground.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_foreground.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\JCIW\bin\Release\JCIW.dll">
+      <Link>ModuleLibs\JCIW.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\ImGui.NET\bin\Release\ImGui.NET.dll">
+      <Link>ModuleLibs\ImGui.NET.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\JCIW.Data\bin\Release\JCIW.Data.dll">
+      <Link>ModuleLibs\JCIW.Data.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\JCIW.Module\bin\Release\JCIW.Module.dll">
+      <Link>ModuleLibs\JCIW.Module.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Networking.Data\bin\Release\Networking.Data.dll">
+      <Link>ModuleLibs\Networking.Data.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll">
+      <Link>ModuleLibs\Newtonsoft.Json.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+</Project>
