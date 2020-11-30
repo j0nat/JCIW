@@ -12,24 +12,14 @@
 
 **To compile**: 
 
-1. Open Windows Live Messenger.sln in Visual Studio
+1. Open JCIW.sln in Visual Studio
 
 2. Build Solution
 
 
 ## Media
 
-![Preview1](./Media/DesktopClient.png)  
-**Desktop client opening demo app**
 
+| <a href="./Media/DesktopClient.png"><img src="./Media/DesktopClient.png" width="200"></a> <br> **Desktop client opening demo app** | ![Preview2](./Media/AndroidClient.png) <br> **Android client opening demo app** | ![Preview3](./Media/Adminclient.png) <br> **Admin client** | ![Preview4](./Media/VS.png) <br> **Visual Studio templates** | 
+|----|----|----|----|
 
-![Preview2](./Media/AndroidClient.png)  
-**Android client opening demo app**
-
-
-![Preview3](./Media/Adminclient.png)  
-**Admin client**
-
-
-![Preview4](./Media/VS.png)  
-**Visual Studio templates**
