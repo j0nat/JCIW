@@ -196,17 +196,16 @@ namespace GraphicsEngine.ImGuiMonoGame
             {
                 platformFunctions.KeyPressEvent += (s, a) =>
                 {
-                    if ((char)s == '\t') return;
-
-                    if ((char)s == 67) // Backspace
+                    if (s.ToString() == "DELETE") // Backspace
                     {
                         mobileKeyBackspace = true;
                     }
                     else
                     {
+                        if ((char)s == '\t') return;
+
                         io.AddInputCharacter((char)s);
                     }
-
                 };
             }
 

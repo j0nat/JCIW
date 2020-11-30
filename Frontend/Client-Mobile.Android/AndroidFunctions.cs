@@ -59,34 +59,67 @@ namespace Client_Mobile.Android
             {
                 View.KeyPress -= View_KeyPress;
             }
-
-            if (e.KeyCode == Keycode.ShiftLeft || e.KeyCode == Keycode.ShiftRight)
+            
+            if (e.Event.IsCapsLockOn || e.Event.IsShiftPressed)
             {
-                if (capitalizedLetters)
-                {
-                    capitalizedLetters = false;
-                }
-                else
-                {
-                    capitalizedLetters = true;
-                }
+                capitalizedLetters = true;
+            }
+            else
+            {
+                capitalizedLetters = false;
             }
 
             string input = GetInput(e.KeyCode, capitalizedLetters);
-
-            if (input != "-1" && e.Event.Action == KeyEventActions.Up)
-            {
-                KeyPressEvent.Invoke(Convert.ToChar(input), EventArgs.Empty);
-            }
+            input = SpecialCharacters(input, e.Event.UnicodeChar);
 
             if (e.KeyCode == Keycode.Del && e.Event.Action == KeyEventActions.Up)
             {
-                KeyPressEvent.Invoke((char)Keycode.Del, EventArgs.Empty);
+                KeyPressEvent.Invoke("DELETE", EventArgs.Empty);
+            }
+            else
+            {
+                if (e.KeyCode == Keycode.Space && e.Event.Action == KeyEventActions.Up)
+                {
+                    KeyPressEvent.Invoke(' ', EventArgs.Empty);
+                }
+                else
+                {
+                    if (input != "-1" && e.Event.Action == KeyEventActions.Up)
+                    {
+                        KeyPressEvent.Invoke(Convert.ToChar(input), EventArgs.Empty);
+                    }
+                    else
+                    {
+                        if (e.Event.Characters != null)
+                        {
+                            KeyPressEvent.Invoke(Convert.ToChar(e.Event.Characters), EventArgs.Empty);
+                        }
+                    }
+                }
             }
 
-            if (e.KeyCode == Keycode.Space && e.Event.Action == KeyEventActions.Up)
+        }
+
+        private string SpecialCharacters(string input, int unicode)
+        {
+            switch (unicode)
             {
-                KeyPressEvent.Invoke(' ', EventArgs.Empty);
+                case 33: return "!";
+                case 63: return "?";
+                case 64: return "@";
+                case 34: return "\"";
+                case 35: return "#";
+                case 37: return "%";
+                case 38: return "&";
+                case 41: return ")";
+                case 40: return "(";
+                case 61: return "=";
+                case 92: return "\\";
+                case 47: return "/";
+                case 58: return ":";
+                case 59: return ";";
+                case 42: return "*";
+                default: return input;
             }
         }
 
@@ -125,7 +158,7 @@ namespace Client_Mobile.Android
                 case Keycode.Num2: return "2";
                 case Keycode.Num3: return "3";
                 case Keycode.Num4: return "4";
-                case Keycode.Num5: return "5";
+                case Keycode.Num5: return "5"; 
                 case Keycode.Num6: return "6";
                 case Keycode.Num7: return "7";
                 case Keycode.Num8: return "8";

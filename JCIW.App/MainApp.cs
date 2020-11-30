@@ -153,9 +153,9 @@ namespace JCIW.App
 
             if (drawAppSelectionView)
             {
-                DrawMainOverlay();
+                float overlayHeight = DrawMainOverlay();
 
-                appSelectionView.Draw();
+                appSelectionView.Draw(overlayHeight);
             }
 
             if (drawApp)
@@ -167,7 +167,6 @@ namespace JCIW.App
                 DrawApp();
             }
         }
-
 
         /// <summary>
         /// Called when logout is clicked.
