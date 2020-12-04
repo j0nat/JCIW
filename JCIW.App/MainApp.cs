@@ -289,6 +289,8 @@ namespace JCIW.App
             GenericResponse response = (GenericResponse)sender;
             if (response != GenericResponse.Success)
             {
+                CloseApp();
+
                 LocalData.SaveSession("");
                 this.drawLogin = true;
                 this.drawAppSelectionView = false;
