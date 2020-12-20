@@ -2,7 +2,7 @@
 
 ![Preview5](./Media/topheader.png)  
 
-Cross platform C# app solution using Dear ImGui, NetworkComms.Net, Xamarin and MonoGame.
+Cross platform C# app development and distribution solution using Dear ImGui, NetworkComms.Net, Xamarin and MonoGame.
 
 Includes:<br>
 JCIW Desktop Client (Mono Compatible)<br>
@@ -10,17 +10,16 @@ JCIW Android Client<br>
 Server (Mono Compatible)<br>
 Admin Client (Server user, group and module administation tool - Windows Only)<br>
 
-
-JCIW API:<br>
-Build UI using ImGui<br>
-Define and send / receive packets using a custom packet solution (Powered by NetworkComms.net)<br>
-Read / write data using a custom database solution<br>
-Option to create MonoGame drawable class to access the underlying MonoGame instance.<br>
-
-
-Create a JCIW app or service in C#, upload it to the JCIW server and deploy it to mobile and desktops.
-
 ## Features
+Server-Client plug-in system.<br>
+Development framework for modules.<br>
+Built-in networking<br>
+Built-in database.<br>
+Built-in login / user / groups or permission systems.<br>
+Clients for Desktop and mobile.<br>
+Powerful GUI tools (Dear ImGui)<br>
+<br>
+Build your apps in the JCIW Framework, upload it to your JCIW Server and run them using the JCIW Client.
 
 ## Compiling
 ### Prerequisites
