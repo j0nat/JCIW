@@ -63,7 +63,7 @@ namespace Networking.Data
                 else
                 if (dataItem.Type == typeof(byte[]))
                 {
-                    items.Add(dataItem.Name, data.byteArrays[currentNumberIndex]);
+                    items.Add(dataItem.Name, data.byteArrays[currentByteArrayIndex]);
 
                     currentByteArrayIndex++;
                 }
